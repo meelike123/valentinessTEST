@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Vella</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --pink: #ff4d6d;
+            --blue: #a2d2ff;
+        }
+
+        body {
+            background-color: #fff0f3;
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Music Player Styling */
+        .music-player {
+            margin-bottom: 20px;
+            z-index: 100;
+        }
+
+        .book-container {
+            width: 420px; /* Slightly wider for aesthetics */
+            height: 550px;
+            position: relative;
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border: 2px solid #ffccd5;
+            border-radius: 20px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        /* --- THE NEW COVER PAGE STYLE --- */
+        .title-page {
+            background: linear-gradient(135deg, var(--blue) 0%, #ff869a 100%);
+            color: white !important;
+            border: none;
+        }
+
+        .title-main {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .title-sub {
+            font-size: 1.1em;
+            line-height: 1.6;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Polaroid Styling */
+        .polaroid {
+            background: white;
+            padding: 10px 10px 35px 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 1px solid #eee;
+            width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .controls {
+            margin-top: 25px;
+            z-index: 100;
+        }
+
+        button {
+            padding: 12px 30px;
+            background-color: var(--pink);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        button:disabled { background-color: #ffccd5; }
+
+        .heart {
+            position: fixed; top: -5vh; font-size: 20px;
+            z-index: 1; animation: fall 4s linear forwards;
+        }
+        @keyframes fall { to { transform: translateY(110vh); } }
+    </style>
+</head>
+<body>
+
+    <div class="music-player">
+        <iframe width="300" height="80" src="https://www.youtube.com/embed/unf2AbrdXh0?playlist=unf2AbrdXh0,8rd1hDqy5nM,7bK5EPjGri4,VRQDOFaFqWk,6JHu3b-pbh8,Wz_5AFguGCU,YKuHdOxj46I" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    </div>
+
+    <div class="book-container">
+        <div class="page active title-page">
+            <div class="title-main">To my Vella</div>
+            <div class="title-sub">
+                Happy Valentine's day to my favourite person ever! <br>
+                I'm so privileged to be your valentine and I hope 
+                you enjoy this little book I made. Enjoy turning the pages!
+            </div>
+            <div class="signature">
+                - Your Bubu ❤️
+            </div>
+        </div>
+
+        <div class="page">
+            <h2>Our Story Begins</h2>
+            <p>Type your message for page 2 here...</p>
+        </div>
+
+        <div class="page"><h2>Page 3</h2><p>Message here...</p></div>
+        <div class="page"><h2>Page 4</h2><p>Message here...</p></div>
+        <div class="page"><h2>Page 5</h2><p>Message here...</p></div>
+        <div class="page"><h2>Page 6</h2><p>Message here...</p></div>
+
+        <div class="page">
+            <div class="polaroid">
+                <img src="https://i.pinimg.com/564x/07/7b/0b/077b0b2b8d0c6d5b0b2b8d0c6d5b0b2b.jpg" alt="Carnations">
+            </div>
+            <h2 style="color:var(--pink)">Page 7</h2>
+            <p>Our favorite number. 🌸</p>
+        </div>
+
+        <div class="page"><h2>Page 8</h2><p>Message here...</p></div>
+        <div class="page"><h2>Page 9</h2><p>Message here...</p></div>
+        <div class="page"><h2>Page 10</h2><p>Message here...</p></div>
+
+        <div class="page">
+            <div class="polaroid">
+                <img src="https://i.pinimg.com/564x/16/9c/98/169c988975a5e37823f993d055106889.jpg" alt="Cat">
+            </div>
+            <h2 style="color:var(--pink)">Page 11</h2>
+            <p>Thinking of you! 🐱</p>
+        </div>
+
+        <div class="page"><h2>Page 12</h2><p>Message here...</p></div>
+        <div class="page"><h2>Page 13</h2><p>Message here...</p></div>
+        <div class="page"><h2>Page 14</h2><p>Message here...</p></div>
+
+        <div class="page" style="background-color: #ffc2d1;">
+            <h1>I Love You Forever!</h1>
+            <p>Happy Valentine's Day, Vella. ❤️</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn" disabled>Back</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        function updatePages() {
+            pages.forEach((page, index) => {
+                page.classList.remove('active');
+                if (index === currentPage) {
+                    page.classList.add('active');
+                }
+            });
+            prevBtn.disabled = (currentPage === 0);
+            nextBtn.disabled = (currentPage === pages.length - 1);
+
+            // Confetti on last page
+            if (currentPage === pages.length - 1) {
+                confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                updatePages();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                updatePages();
+            }
+        });
+
+        setInterval(() => {
+            const h = document.createElement('div');
+            h.innerHTML = '❤️'; h.className = 'heart';
+            h.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(h);
+            setTimeout(() => h.remove(), 4000);
+        }, 400);
+    </script>
+</body>
+</html>
